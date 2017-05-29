@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_extensions',
+    'djangobower',
     'people',
 ]
 
@@ -69,6 +70,20 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+]
+
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, "static")
+
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'bootstrap-sass',
+    'fontawesome',
+)
 
 WSGI_APPLICATION = 'rs.wsgi.application'
 
