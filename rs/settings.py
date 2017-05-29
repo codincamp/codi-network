@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_extensions',
+    'sass_processor',
     'djangobower',
     'people',
 ]
@@ -75,6 +76,7 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'djangobower.finders.BowerFinder',
+    'sass_processor.finders.CssFinder',
 ]
 
 BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, "static")
@@ -84,6 +86,10 @@ BOWER_INSTALLED_APPS = (
     'bootstrap-sass',
     'fontawesome',
 )
+
+SASS_PROCESSOR_INCLUDE_DIRS = [
+    os.path.join(BASE_DIR, 'static', 'bower_components'),
+]
 
 WSGI_APPLICATION = 'rs.wsgi.application'
 
@@ -132,7 +138,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]

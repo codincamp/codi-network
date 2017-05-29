@@ -1,9 +1,10 @@
-{% load static %}
+{% load static sass_tags %}
 <!doctype html>
 <html lang="fr">
  <head>
      <meta charset="utf-8">
      <title>{% block title %}{% endblock %}</title>
+     <link rel="stylesheet" href="{% sass_src 'bootstrap-sass/assets/stylesheets/_bootstrap.scss'%}" >
  </head>
  <body>
     <div class="container">
@@ -12,7 +13,7 @@
             {% endblock content %}
         </div>
     </div>
-    {% static "bower_components/jquery/dist/jquery.min.js" %}
-    {% static "bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js" %}
+    <script src="{% static "bower_components/jquery/dist/jquery.min.js" %}" charset="utf-8"></script>
+    <script src="{% static "bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js" %}" charset="utf-8"></script>
  </body>
 </html>
