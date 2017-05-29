@@ -25,7 +25,7 @@ SECRET_KEY = 'dk+u)p2@9m^q$ktxany=8$k*sw%+$9b%)byvueumkew2coe8c&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'codi-network.herokuapp.com']
 
 
 # Application definition
