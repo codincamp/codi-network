@@ -79,7 +79,7 @@ STATICFILES_FINDERS = [
     'sass_processor.finders.CssFinder',
 ]
 
-BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, "externals")
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, "static")
 
 BOWER_INSTALLED_APPS = (
     'jquery',
@@ -88,7 +88,7 @@ BOWER_INSTALLED_APPS = (
 )
 
 SASS_PROCESSOR_INCLUDE_DIRS = [
-    os.path.join(BASE_DIR, 'externals', 'bower_components'),
+    os.path.join(BASE_DIR, 'static', 'bower_components'),
 ]
 
 WSGI_APPLICATION = 'rs.wsgi.application'
@@ -139,7 +139,6 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'externals')
+    os.path.join(BASE_DIR, 'static')
 ]
