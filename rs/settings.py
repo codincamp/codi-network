@@ -153,6 +153,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+SASS_PROCESSOR_ROOT = STATICFILES_DIRS[0]
 
 SITE_ID = 1
 
